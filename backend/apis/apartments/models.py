@@ -1,7 +1,10 @@
 #import modules
 from backend.apis.apartments.database import Base
+#from backend.apis.houses.models import House
+
 from sqlalchemy import Column, Integer, String
 from sqlalchemy_utils import ChoiceType
+from sqlalchemy.orm import relationship
 
 #create db tables and column
 class Apartment(Base):
@@ -19,6 +22,7 @@ class Apartment(Base):
     type =  Column(ChoiceType(choices=TYPES), default="Apartment")
     country = Column(String(10000))
     town =  Column(String(10000))
+    houses =  relationship("House", back_populates="apartment")
 
     def __repr__(self):
         return f"<Apartment{self.name}"

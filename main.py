@@ -3,6 +3,7 @@ from fastapi_jwt_auth import AuthJWT
 
 from backend.apis.authentication.views import auth_router
 from backend.apis.apartments.views import apartment_router
+from backend.apis.houses.views import house_router
 from backend.apis.authentication.schemas import Settings
 
 app = FastAPI()
@@ -13,6 +14,7 @@ def get_config():
 
 app.include_router(auth_router)
 app.include_router(apartment_router)
+app.include_router(house_router)
 
 if __name__ == "__main__":
     app.run(debug=True, port=8080)

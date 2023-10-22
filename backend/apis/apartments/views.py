@@ -36,9 +36,7 @@ async def add_apartment(apartment:ApartmentModel):
         return jsonable_encoder(response)
     except Exception as e:
         session.rollback()
-        return HTTPException(status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Bad request"
-        )
+        raise e
 
 #pagination route
 @apartment_router.get("/apartment", 
