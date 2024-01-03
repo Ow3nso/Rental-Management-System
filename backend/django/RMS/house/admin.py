@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+# ----- In-Built Libraries -----
+from .models import House
+
+# ----- Model Registration -----
+admin.site.register(House)
