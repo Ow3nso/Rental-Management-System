@@ -6,9 +6,9 @@ from fastapi.encoders import jsonable_encoder
 from fastapi import status
 
 # ----- In-Built Libraries -----
-from .models import Property
-from .schemas import PropertyModel, PropertyResponse
-from .database import sessionmaker, engine
+from property.models import Property
+from property.schemas import PropertyModel, PropertyResponse
+from property.database import sessionmaker, engine
 
 # ----- database config -----
 Session = sessionmaker()
